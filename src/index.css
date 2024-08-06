@@ -1,13 +1,47 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* src/EmployeeTable.css */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 1px solid rgb(83, 150, 83);
+}
+
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid rgb(234, 232, 232);
+}
+
+th {
+  background-color: rgb(83, 150, 83);
+  text-align: left;
+  color: aliceblue;
+}
+.buttons {
+ display: flex;
+ justify-content: center;
+ margin-top: 20px;
+}
+button{
+  width: 70px;
+  height: 30px;
+  margin: 0 15px;
+  background-color: rgb(83, 150, 83);
+  color: aliceblue;
+  border: none;
+  cursor: pointer;
+  margin-top: 3px;
+}
+.page-number{
+
+  background-color: rgb(83, 150, 83);
+  color: aliceblue;
+  border: none;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  
 }
