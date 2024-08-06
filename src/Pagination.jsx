@@ -7,11 +7,22 @@ const Pagination = () => {
     const rowsPerPage = 10;
   
     useEffect(() => {
-      fetch('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json')
-        .then((response) => response.json())
-        .then((data) => setData(data))
-        .catch(() => setError('Failed to fetch data'));
-    }, []);
+        const fetchData = async () => {
+          try {
+            const response = await fetch('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json');
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setData(data);
+          } catch (error) {
+            setError('Failed to fetch data');
+            alert('Failed to fetch data');
+          }
+        };
+    
+        fetchData();
+      }, []);
   
     const indexOfLastRow = currentPage * rowsPerPage;
     const indexOfFirstRow = indexOfLastRow - rowsPerPage;
